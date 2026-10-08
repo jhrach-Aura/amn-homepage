@@ -79,7 +79,7 @@ The page, top to bottom:
 
 | # | Section | Content | Interactions |
 |---|---|---|---|
-| 1 | **Header / global nav** | AZ MVD Now logo; tabs: Vehicle, Driver License & ID, Title, Other, Help; **Sign In / Sign Up** button | Hover or click opens a dropdown menu, and items with children open a flyout submenu. Esc or a click outside closes it. Below a breakpoint the tabs collapse into a hamburger that opens a 3-level accordion. Menu items and Sign In only show a "Prototype: …" toast. |
+| 1 | **Header / global nav** | AZ MVD Now logo; tabs: Vehicle, Driver License & ID, Title, **Voter Registration** (a direct link with no menu), Other, Help; **Sign In / Sign Up** button | Hover or click opens a dropdown menu, and items with children open a flyout submenu. Esc or a click outside closes it. Below a breakpoint the tabs collapse into a hamburger that opens a 3-level accordion. Menu items and Sign In only show a "Prototype: …" toast. |
 | 2 | **Alerts** | A slim strip (about 45px) directly under the header, outside the hero. Collapsed by default, it shows "⚠ **3 alerts:** Register to vote · Office hours · New service" and *View alerts*. Expanded, each alert has a bold title, a one-sentence message, and a descriptive link. | *View alerts* / *Hide alerts* toggle (`aria-expanded`). Each alert has its own dismiss button and the summary updates; focus moves to the next alert, or to the H1. With one alert left, its full text shows inline with no toggle; with none, the strip disappears. On mobile the summary shortens to "3 alerts" and *View*. Kept quiet on purpose so it doesn’t compete with the hero. |
 | 3 | **Hero** | H1 "Arizona MVD Services Without Leaving Home"; sub "Take care of your MVD business online—quickly and securely." | 6 quick-service tiles: Registration Renewal, Schedule an Appointment, Voter Registration, Travel ID Application, New to Arizona, ADOT Website. **See More** scrolls to Guest Services. |
 | 4 | **Travel ID promo** | "Get Airport-Ready with an Arizona Travel ID" + supporting copy | **Apply Now** (primary), **Learn More** (link) |
@@ -116,8 +116,9 @@ The page, top to bottom:
   - Mobile ID Management
 - **Title**
   - Title Viewer · Title Information (Other Vehicles) · eTitle Transfer · Title Replacement · Sold Notice · Bill of Sale
+- **Voter Registration** (top-level link to the AZ MVD Now voter registration page; moved out of Other)
 - **Other**
-  - Voter Registration · Change Address · Aircraft Registration Renewal · Manage Insurance · Manage Compliance Issues · Compliance Issues Timeline · View Receipts · Dealer Licensing and Services · Apply for an Organization Account
+  - Change Address · Aircraft Registration Renewal · Manage Insurance · Manage Compliance Issues · Compliance Issues Timeline · View Receipts · Dealer Licensing and Services · Apply for an Organization Account
 - **Help**
   - Schedule an Appointment · Contact Us · MVD Invitation Code · Find an MVD Location · Provide Feedback · Report Fraud · View Video Library · View Forms
 
@@ -126,10 +127,10 @@ The page, top to bottom:
 Priority: **P0** = required for the next usability round, **P1** = should have, **P2** = nice to have.
 
 ### Global navigation
-- **FR-01 (P0)** Five top-level tabs with dropdown menus and flyout submenus that match §7.
+- **FR-01 (P0)** Six top-level nav items that match §7: five tabs with dropdown menus and flyout submenus, plus **Voter Registration** after Title as a direct link with no chevron. Hovering it closes any open menu. Below 1140px the nav collapses to the hamburger so all six items never wrap onto two rows.
   *Acceptance:* each menu opens on click and on hover. It closes on Esc, on a click outside, and on mouse-leave after a short delay.
 - **FR-02 (P0)** The menus are fully keyboard operable: Tab or arrow keys move between tabs and items, Enter or Space opens a menu, and focus returns to the tab when a menu closes.
-- **FR-03 (P0)** On mobile, a hamburger opens a 3-level accordion with the same taxonomy, and only one branch is open at each level.
+- **FR-03 (P0)** On mobile, a hamburger opens a 3-level accordion with the same taxonomy, and only one branch is open at each level. Voter Registration is a plain row that opens its page and closes the drawer.
 - **FR-04 (P1)** Menu leaf items go to a stub page or a real destination URL instead of only showing a toast, so testers can confirm they reached the right place.
 - **FR-05 (P0)** The **Sign In / Sign Up** button is always visible in the header at every breakpoint.
 
